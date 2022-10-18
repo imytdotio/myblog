@@ -2,6 +2,7 @@ import React from "react";
 import SelfIntro from "../Components/SelfIntro";
 import Products from "../Components/Products";
 import Projects from "../Components/Projects";
+import Quick from "../Components/Quick";
 /**
  * @author
  * @function Home
@@ -9,8 +10,10 @@ import Projects from "../Components/Projects";
 
 const Home = (props) => {
   return (
-    <div className="w-4/5 md:w-3/5 xl:w-2/5 mx-auto">
+    <div className="">
+      <Quick />
       <SelfIntro />
+      {/* <AssetTalentStack /> */}
       <Products />
       <Projects />
     </div>
