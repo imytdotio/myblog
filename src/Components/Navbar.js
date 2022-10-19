@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
  **/
 
 const Navbar = (props) => {
-  const nav = "inline-block m-2";
+  const nav = "inline-block md:m-2 -mb-2";
   return (
     <nav className="py-4 grid grid-cols-5">
       <div className="col-span-1 text-left">
@@ -18,6 +18,9 @@ const Navbar = (props) => {
       <div className="col-span-4 text-right md:visible invisible">
         <NavLink to="/about" className={nav}>
           <h1>About</h1>
+        </NavLink>
+        <NavLink to="/blog" className={nav}>
+          <h1>Blog</h1>
         </NavLink>
         <NavLink to="/stack" className={nav}>
           <h1>Talent & Skill Stack</h1>

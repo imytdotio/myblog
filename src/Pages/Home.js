@@ -11,7 +11,7 @@ import Quick from "../Components/Quick";
 const Home = (props) => {
   return (
     <div className="">
-      <Quick />
+      <Quick className='invisible'/>
       <SelfIntro />
       {/* <AssetTalentStack /> */}
       <Products />
