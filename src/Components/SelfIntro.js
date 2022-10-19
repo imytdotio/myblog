@@ -7,7 +7,7 @@ import React from "react";
 
 const SelfIntro = (props) => {
   const Links =
-    "text-indigo-600 underline hover:bg-indigo-600 hover:text-white duration-200 pr-1";
+    "text-indigo-600 underline hover:bg-imyt_blue hover:text-white duration-200 pr-1";
   return (
     <div className="md:p-8 text-left">
       <h1 className="font-bold text-5xl pt-4 pb-8">Hello, I'm YT</h1>

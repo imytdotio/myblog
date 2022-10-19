@@ -7,7 +7,7 @@ import React from "react";
 
 const Pill = (props) => {
   return (
-    <div className="border-2 inline-block px-2 mx-1 my-1 rounded-full border-gray-200">
+    <div className="border inline-block px-2 mx-1 my-1 rounded-full border-gray-400">
       {props.children}
     </div>
   );
