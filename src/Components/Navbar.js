@@ -16,9 +16,6 @@ const Navbar = (props) => {
         </NavLink>
       </div>
       <div className="col-span-4 text-right md:visible invisible">
-        <NavLink to="/about" className={nav}>
-          <h1>About</h1>
-        </NavLink>
         <NavLink to="/blog" className={nav}>
           <h1>Blog</h1>
         </NavLink>

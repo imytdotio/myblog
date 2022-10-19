@@ -27,7 +27,7 @@ const Blog = (props) => {
               id: doc.id,
               title: doc.data().title,
               content: doc.data().content,
-              date: doc.data().date*1000,
+              date: doc.data().date * 1000,
             });
           });
           setData(results);
@@ -48,9 +48,8 @@ const Blog = (props) => {
       {data &&
         data.map((blog) => {
           return (
-            <Link to={`/blog/${blog.id}`}>
+            <Link to={`/blog/${blog.id}`} key={blog.id}>
               <BlogPostSnippet
-                key={blog.id}
                 date={blog.date}
                 title={blog.title}
                 content={blog.content}

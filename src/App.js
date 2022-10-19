@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
 import Blog from "./Pages/Blog";
 import BlogPost from "./Pages/BlogPost";
 
@@ -14,9 +13,6 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Home />
-          </Route>
-          <Route path="/about" exact>
-            <About />
           </Route>
           <Route path="/blog" exact>
             <Blog />
