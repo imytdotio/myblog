@@ -25,10 +25,10 @@ const BlogPostSnippet = (props) => {
     <div className="grid grid-cols-6 bg-white rounded-xl shadow-xl m-2 p-4 py-6">
       <div className="col-span-1">
         <p className="text-4xl font-black">
-          {new Date(props.date.seconds).getDate()}
+          {new Date(props.date).getDate()}
         </p>
         <p className="text-xl">
-          {monthNames[new Date(props.date.seconds).getMonth()]}
+          {monthNames[new Date(props.date).getMonth()]}
         </p>
       </div>
       <div className="col-span-5 text-left">

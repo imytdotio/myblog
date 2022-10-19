@@ -27,7 +27,7 @@ const Blog = (props) => {
               id: doc.id,
               title: doc.data().title,
               content: doc.data().content,
-              date: doc.data().date,
+              date: doc.data().date*1000,
             });
           });
           setData(results);

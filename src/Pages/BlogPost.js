@@ -11,6 +11,7 @@ import { projectFirestore } from "../firebase/config";
 const BlogPost = (props) => {
   const params = useParams();
   const [data, setData] = useState(null);
+  const [date, setDate] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
 
@@ -23,6 +24,7 @@ const BlogPost = (props) => {
         (doc) => {
           if (doc.exists) {
             setData(doc.data());
+            setDate(doc.data().date.seconds * 1000);
             setIsPending(false);
           } else {
             setError("No data");
@@ -35,14 +37,17 @@ const BlogPost = (props) => {
         }
       );
   }, []);
+
   return (
     <div>
       {isPending && <p>Loading</p>}
       {error && <p>{error}</p>}
       {data && (
         <div className="text-left">
-          <h1 className = 'font-bold text-4xl my-2'>{data.title}</h1>
-          <p className = 'text-gray-800 italic my-2'>{new Date(data.date.seconds).toDateString()}</p>
+          <h1 className="font-bold text-4xl my-2">{data.title}</h1>
+          <p className="text-gray-800 italic my-2">
+            {new Date(date).toLocaleDateString()}
+          </p>
           <p>{data.content}</p>
         </div>
       )}
