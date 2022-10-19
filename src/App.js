@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
+import BlogPost from "./Pages/BlogPost";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/blog" exact>
             <Blog />
+          </Route>
+          <Route path="/blog/:id">
+            <BlogPost />
           </Route>
         </Switch>
       </BrowserRouter>

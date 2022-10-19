@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import BlogPostSnippet from "../Components/BlogPostSnippet";
 import { projectFirestore } from "../firebase/config";
 
@@ -14,25 +15,31 @@ const Blog = (props) => {
   useEffect(() => {
     setIsPending(true);
 
-    projectFirestore.collection("blog").onSnapshot((snapshot) => {
-      let results = [];
-      if (snapshot.empty) {
-        setError("No data");
-        setIsPending(false);
-      } else {
-        snapshot.docs.forEach((doc) => {
-          results.push({
-            id: doc.id,
-            title: doc.data().title,
-            content: doc.data().content,
-            date: doc.data().date,
+    projectFirestore.collection("blog").onSnapshot(
+      (snapshot) => {
+        let results = [];
+        if (snapshot.empty) {
+          setError("No data");
+          setIsPending(false);
+        } else {
+          snapshot.docs.forEach((doc) => {
+            results.push({
+              id: doc.id,
+              title: doc.data().title,
+              content: doc.data().content,
+              date: doc.data().date,
+            });
           });
-        });
-        setData(results);
-        console.log(data);
+          setData(results);
+          setIsPending(false);
+        }
+      },
+      (err) => {
+        setError(err);
+        console.log(err);
         setIsPending(false);
       }
-    });
+    );
   }, []);
   return (
     <div>
@@ -41,12 +48,14 @@ const Blog = (props) => {
       {data &&
         data.map((blog) => {
           return (
-            <BlogPostSnippet
-              key={blog.id}
-              date={blog.date}
-              title={blog.title}
-              content={blog.content}
-            />
+            <Link to={`/blog/${blog.id}`}>
+              <BlogPostSnippet
+                key={blog.id}
+                date={blog.date}
+                title={blog.title}
+                content={blog.content}
+              />
+            </Link>
           );
         })}
     </div>
