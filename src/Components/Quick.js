@@ -23,14 +23,14 @@ const Quick = (props) => {
           <p className="inline"> Github</p>
         </Pill>
       </a>
-      <a href="https://instagram.com/imyt.io" target="blank">
+      <a href="http://onepercentcircle.org/" target="blank">
         <Pill>
           {" "}
           <BsFillRecordCircleFill className="inline mb-1" />
           <p className="inline"> One Percent Circle</p>
         </Pill>
       </a>
-      <a href="https://instagram.com/imyt.io" target="blank">
+      <a href="https://onepercentcircle.org/productivity" target="blank">
         <Pill>
           <AiOutlineRocket className="inline mb-1" />
           <p className="inline"> Ultimate Productivity Guide</p>
