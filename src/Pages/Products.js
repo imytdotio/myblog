@@ -31,7 +31,7 @@ const Products = (props) => {
   }, []);
 
   return (
-    <div className="bg-indigo-100">
+    <div className="">
       <h1>Products</h1>
       {products.map((product) => {
         return (
