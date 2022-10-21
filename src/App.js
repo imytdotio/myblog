@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import Blog from "./Pages/Blog";
 import BlogPost from "./Pages/BlogPost";
+import Products from "./Pages/Products";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route path="/blog" exact>
             <Blog />
+          </Route>
+          <Route path="/products">
+            <Products />
           </Route>
           <Route path="/blog/:id">
             <BlogPost />
