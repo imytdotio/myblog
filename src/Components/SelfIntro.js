@@ -1,6 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
 
 /**
  * @author
@@ -10,13 +8,9 @@ import i18n from "../i18n";
 const SelfIntro = (props) => {
   const Links =
     "text-indigo-600 underline hover:bg-imyt_blue hover:text-white duration-200 pr-1";
-
-  const { t } = useTranslation();
-
   return (
     <div className="md:p-8 text-left">
       <h1 className="font-bold text-5xl pt-4 pb-8">Hello, I'm YT</h1>
-      {/* <p>{t("intro")}</p> */}
       <p className="leading-7">
         👋 Hello, 我是 YT, 現正修讀大學課程 - Data Science y/4, 同時自學
         <a className={Links} href="https://github.com/imytdotio">

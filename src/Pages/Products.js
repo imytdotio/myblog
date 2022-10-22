@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import BuyOn from "../Components/BuyOn";
-import config from "../config";
+import Product from "../Components/Product";
+import config from '../config'
 /**
  * @author
  * @function Products
@@ -11,11 +11,9 @@ const Products = (props) => {
   var GUMROAD_LONG = config.GUMROAD_LONG;
 
   const [products, setProducts] = useState([]);
-  const [isPending, setIsPending] = useState(false);
   useEffect(() => {
-    setIsPending(true);
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", GUMROAD_BEARER);
+    myHeaders.append("Authorization", GUMROAD_BEARER );
     myHeaders.append("Cookie", GUMROAD_LONG);
 
     var requestOptions = {
@@ -28,26 +26,42 @@ const Products = (props) => {
       .then((response) => response.text())
       .then((result) => setProducts(JSON.parse(result).products))
       .catch((error) => console.log("error", error));
-    setIsPending(false);
+
+    // console.log(products.products[1]);
   }, []);
-  useEffect(() => {
-    console.log(products);
-  }, [products]);
+
   return (
     <div className="">
-      {isPending && <p>Loading...</p>}
-      {products &&
-        products.map((product) => {
-          return (
-            <BuyOn
-              key={product.id}
-              href={product.short_url}
-              title={product.name}
-              description={product.description}
-              thumbnail_url={product.thumbnail_url}
-            />
-          );
-        })}
+      <h1>Products</h1>
+      {products.map((product) => {
+        return (
+          <Product
+            href={`https://imyt.gumroad.com/l/${product.custom_permalink}`}
+            title={product.name}
+            description={product.description}
+          />
+        );
+      })}
+      {/* <Product
+        href="https://imyt.gumroad.com/l/5am"
+        title="5am"
+        description="Lorem Ipsum"
+      />
+      <Product
+        href="https://imyt.gumroad.com/l/planner"
+        title="Planner"
+        description="Lorem Ipsum"
+      /> */}
+      {/* <div className=" w-1/2 inline-block h-screen p-4">
+        <div class="gumroad-product-embed">
+          <a href="https://imyt.gumroad.com/l/planner">Loading...</a>
+        </div>
+      </div>
+      <div className=" w-1/2 inline-block h-screen p-4 overflow-auto">
+        <div class="gumroad-product-embed">
+          <a href="https://imyt.gumroad.com/l/5am">Loading...</a>
+        </div>
+      </div> */}
     </div>
   );
 };
