@@ -43,7 +43,7 @@ const BlogPost = (props) => {
       {isPending && <p>Loading</p>}
       {error && <p>{error}</p>}
       {data && (
-        <div className="text-left">
+        <div className="text-left bg-white p-8 shadow-lg">
           <h1 className="font-bold text-4xl my-2">{data.title}</h1>
           <p className="text-gray-800 italic my-2">
             {new Date(date).toLocaleDateString()}
