@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Blog from "./Pages/Blog";
 import BlogPost from "./Pages/BlogPost";
 import Products from "./Pages/Products";
+import Bets from "./Pages/Bets";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/blog" exact>
             <Blog />
+          </Route>
+          <Route path="/bets" exact>
+            <Bets />
           </Route>
           <Route path="/products">
             <Products />
