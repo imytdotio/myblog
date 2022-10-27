@@ -34,7 +34,7 @@ const Products = (props) => {
     console.log(products);
   }, [products]);
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-2 mb-4">
       {isPending && <p>Loading...</p>}
       {products &&
         products.map((product) => {

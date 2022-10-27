@@ -8,7 +8,7 @@ import React from "react";
 const BuyOn = (props) => {
   const description = `${props.description.substring(0, 99)} ...`;
   return (
-    <div className="glass m-2 p-2inline-block">
+    <div className="glass p-2 inline-block">
       <img className='rounded-md shadow-xl mb-4 w-full'src={props.thumbnail_url} />
       <h1 className="mb-2 font-bold">{props.title}</h1>
       <div
