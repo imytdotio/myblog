@@ -7,7 +7,7 @@ import React from "react";
 
 const BlogPostSnippet = (props) => {
   return (
-    <div className="grid grid-cols-6 bg-white shadow-xl my-4 mx-2 p-4 py-6">
+    <div className="grid grid-cols-6 glass my-4 mx-2 p-4 py-6">
       <div className="col-span-1">
         <p className="text-4xl font-black">{new Date(props.date).getDate()}</p>
         <p className="text-xl">{monthNames[new Date(props.date).getMonth()]}</p>

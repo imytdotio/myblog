@@ -1,4 +1,5 @@
 import React from "react";
+import { BetBlock } from "../Components/BetBlock";
 
 /**
  * @author
@@ -36,6 +37,8 @@ const Bets = (props) => {
           </a>{" "}
           are bets, which can as well train my programming skills.
         </p>
+
+        <BetBlock title="hello" desc="bye" />
       </div>
     </div>
   );
