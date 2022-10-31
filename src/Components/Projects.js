@@ -31,11 +31,19 @@ const Projects = (props) => {
       />
       <ProjectBlock
         title="Todo List"
-        desc="Verticap app, upper 3/4 = google calendar style dragging planner & Todo list (swipe), lower 1/4 = pomodoro"
+        desc="Verticap app, upper 3/4 = ⬤ google calendar style dragging planner & Todo list (swipe), lower 1/4 = ⬤ pomodoro, drag up = ⬤ todo list and push pomodoro up to upper 1/4"
+      />
+      <ProjectBlock
+        title="Todo List + Habit Tracker"
+        desc="⬤ + Habit Ring & Minimalist Journaling"
       />
       <ProjectBlock
         title="Room Booking System"
         desc="An easy setup room booking app for small organizations. This project is for practising my skill"
+      />
+      <ProjectBlock
+        title="3d + Voxel"
+        desc="Yes, I want to learn 3d modelling as well... Basic voxel is not that easy tho :)"
       />
     </div>
   );
